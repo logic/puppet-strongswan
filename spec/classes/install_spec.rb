@@ -7,8 +7,8 @@ describe 'strongswan::install', :type => 'class' do
     it do
       should compile.with_all_deps
       should contain_package('strongswan')
-      should contain_package('strongswan-plugin-unity')
-      should contain_package('strongswan-plugin-xauth-pam')
+#      should contain_package('strongswan-plugin-unity')
+#      should contain_package('strongswan-plugin-xauth-pam')
     end
   end
 
