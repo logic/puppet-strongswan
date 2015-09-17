@@ -22,15 +22,15 @@
 #
 class strongswan::install (
   $package = $strongswan::env::strongswan_package,
-  $plugins = $strongswan::env::strongswan_plugins,
+#  $plugins = $strongswan::env::strongswan_plugins,
   $version = $strongswan::env::strongswan_version,
 ) inherits strongswan::env {
   package { $package:
     ensure => $version,
   }
-
-  package { $plugins:
-    ensure  => $version,
-    require => Package[$package]
-  }
+#
+#  package { $plugins:
+#    ensure  => $version,
+#    require => Package[$package]
+#  }
 }
