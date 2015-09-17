@@ -13,7 +13,7 @@ class strongswan::service (
 ) inherits strongswan::env {
   service { 'strongswan':
     ensure     => $ensure,
-    provider   => 'upstart',
+    provider   => 'systemd',
     name       => $service,
     enable     => $enable,
     hasstatus  => true,
