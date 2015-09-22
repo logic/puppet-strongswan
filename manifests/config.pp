@@ -40,14 +40,14 @@ class strongswan::config (
   # /etc/ipsec.conf file defaults.
   $_ipsec_options = merge($strongswan::env::ipsec_options, $ipsec_options)
   file {
-    '/etc/ipsec.conf':
+    '/etc/strongswan/ipsec.conf':
     ensure  => file,
     owner   => 'root',
     group   => 'root',
     mode    => '0600',
     content => template('strongswan/ipsec.conf.erb');
 
-    '/etc/ipsec.d':
+    '/etc/strongswan/ipsec.d/':
     ensure => directory,
     owner  => 'root',
     group  => 'root',
@@ -61,7 +61,7 @@ class strongswan::config (
     recurse => true,
     purge   => true,
     backup  => false,
-    require => File['/etc/ipsec.d'];
+    require => File['/etc/strongswan/ipsec.d'];
 
     # Used to ensure that the 'include ..' line in the /etc/ipsec.conf file
     # doesn't throw an error saying there are no files to include.
@@ -81,7 +81,7 @@ class strongswan::config (
     recurse => true,
     purge   => true,
     backup  => false,
-    require => File['/etc/ipsec.d'];
+    require => File['/etc/strongswan/ipsec.d/'];
 
     # Used to ensure that the 'include ..' line in the /etc/ipsec.secrets file
     # doesn't throw an error saying there are no files to include.
