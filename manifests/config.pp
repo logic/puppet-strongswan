@@ -53,6 +53,12 @@ class strongswan::config (
     group  => 'root',
     mode   => '0750';
 
+    '/etc/strongswan.d/':
+    ensure => directory,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0750';
+
     $conn_conf_path:
     ensure  => directory,
     owner   => 'root',
