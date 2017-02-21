@@ -59,6 +59,12 @@ class strongswan::config (
     group  => 'root',
     mode   => '0750';
 
+    '/etc/strongswan/':
+    ensure => directory,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0750';
+
     '/etc/ipsec.d':
     ensure => directory,
     owner  => 'root',
