@@ -13,8 +13,8 @@ class strongswan::env {
   # Default Strongswan Plugins and Version to install
   $strongswan_version = 'installed'
   $strongswan_package = 'strongswan'
-#  $strongswan_plugins = [ 'strongswan-plugin-unity',
-#                          'strongswan-plugin-xauth-pam' ]
+  $strongswan_plugins = [ 'strongswan-plugin-unity',
+                          'strongswan-plugin-xauth-pam' ]
 
   # Service configuration options
   $service_name   = 'strongswan'

@@ -58,12 +58,12 @@ class strongswan (
   $service_enable     = $strongswan::env::service_enable,
   $strongswan_package = $strongswan::env::strongswan_package,
   $strongswan_version = $strongswan::env::strongswan_version,
-#  $strongswan_plugins = $strongswan::env::strongswan_plugins
+  $strongswan_plugins = $strongswan::env::strongswan_plugins
 ) inherits strongswan::env {
   class { 'strongswan::install':
     package => $strongswan_package,
     version => $strongswan_version,
-#    plugins => $strongswan_plugins,
+    plugins => $strongswan_plugins,
   }
   contain strongswan::install
 

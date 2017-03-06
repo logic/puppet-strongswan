@@ -28,9 +28,9 @@ class strongswan::install (
   package { $package:
     ensure => $version,
   }
-#
-#  package { $plugins:
-#    ensure  => $version,
-#    require => Package[$package]
-#  }
+
+  package { $plugins:
+    ensure  => $version,
+    require => Package[$package]
+  }
 }
